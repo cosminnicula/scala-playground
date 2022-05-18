@@ -105,4 +105,12 @@ class Classes extends AnyFunSuite {
     assert(user.username.equals("user1"));
     assert(user.isLocked.equals(true));
   }
+
+  test("named arguments") {
+    val user = new User(domain = "somedomain", isLocked = false, username = "someuser")
+
+    assert(user.domain.equals("somedomain"));
+    assert(user.username.equals("someuser"));
+    assert(user.isLocked.equals(false));
+  }
 }
